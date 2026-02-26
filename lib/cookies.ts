@@ -1,4 +1,5 @@
-const TOKEN_KEY = "token";
+export const TOKEN_KEY = "token";
+const REFRESH_TOKEN_KEY = "refresh_token";
 
 export function getCookie(name: string): string | undefined {
   if (typeof document === "undefined") return undefined;
@@ -31,6 +32,15 @@ export function setToken(value: string, maxAge?: number): void {
   setCookie(TOKEN_KEY, value, { maxAge, path: "/" });
 }
 
+export function getRefreshToken(): string | undefined {
+  return getCookie(REFRESH_TOKEN_KEY);
+}
+
+export function setRefreshToken(value: string, maxAge?: number): void {
+  setCookie(REFRESH_TOKEN_KEY, value, { maxAge, path: "/" });
+}
+
 export function clearToken(): void {
   deleteCookie(TOKEN_KEY);
+  deleteCookie(REFRESH_TOKEN_KEY);
 }

@@ -1,5 +1,6 @@
 import axios, { type AxiosError, type InternalAxiosRequestConfig } from "axios";
 import { clearToken, getToken } from "./cookies";
+import { toast } from "sonner";
 
 const baseURL = process.env.NEXT_PUBLIC_API_URL ?? "";
 
@@ -32,8 +33,22 @@ api.interceptors.response.use(
         clearToken();
       }
     }
+
+    if (typeof window !== "undefined") {
+      const message =
+        (error.response?.data as { detail?: string; message?: string } | undefined)
+          ?.detail ??
+        (error.response?.data as { detail?: string; message?: string } | undefined)
+          ?.message ??
+        error.message ??
+        "Something went wrong. Please try again.";
+
+      toast.error(message);
+    }
+
     return Promise.reject(error);
   }
 );
 
 export default api;
+
