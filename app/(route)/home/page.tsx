@@ -42,19 +42,6 @@ export default function Home() {
   });
 
   useEffect(() => {
-    if (organizations?.length && !selectedSenderOrgId) {
-      const first = organizations[0];
-      setSelectedSenderOrgId(first.id);
-      setSender({
-        entity: first.entity_name ?? "",
-        department: first.department_name ?? "",
-        section: first.section_name ?? "",
-        unit: first.unit_name ?? "",
-      });
-    }
-  }, [organizations, selectedSenderOrgId]);
-
-  useEffect(() => {
     if (receivedOrganizations?.length && selectedReceivedIds.length === 0) {
       const first = receivedOrganizations[0];
       setSelectedReceivedIds([first.id]);
@@ -85,20 +72,10 @@ export default function Home() {
       }),
     onSuccess: () => {
       toast.success("Document submitted successfully.");
-      const senderOrgs = queryClient.getQueryData<Organization[]>(["organizations", "me"]);
       const receivedOrgs = queryClient.getQueryData<Organization[]>(["organizations", "received"]);
-      const firstSender = senderOrgs?.[0];
       const firstReceived = receivedOrgs?.[0];
-      setSender(
-        firstSender
-          ? {
-              entity: firstSender.entity_name ?? "",
-              department: firstSender.department_name ?? "",
-              section: firstSender.section_name ?? "",
-              unit: firstSender.unit_name ?? "",
-            }
-          : emptyParty
-      );
+      setSelectedSenderOrgId(null);
+      setSender(emptyParty);
       setSelectedReceivedIds(firstReceived ? [firstReceived.id] : []);
       setReceived(
         firstReceived
