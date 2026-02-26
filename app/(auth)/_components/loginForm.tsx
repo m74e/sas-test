@@ -20,7 +20,7 @@ const LoginForm = () => {
     mutationFn: login,
     onSuccess: () => {
       const from = searchParams.get("from");
-      const redirectPath = from && from.startsWith("/") ? from : "/";
+      const redirectPath = from && from.startsWith("/") ? from : "/home";
       router.push(redirectPath);
       router.refresh();
     },

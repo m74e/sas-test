@@ -43,7 +43,7 @@ export default function MainPage() {
         />
 
         <div className="relative z-10 mx-auto max-w-6xl px-6 pt-6 pb-20">
-          <header className="flex flex-wrap items-center justify-between gap-4 border-b border-[#FF62FC]/30 pb-4 mt-16">
+          <header className="flex flex-wrap items-center justify-between gap-6 pt-4 pb-4 mt-16">
             <Image
               src="/logo.png"
               alt="Excellence"
@@ -51,39 +51,44 @@ export default function MainPage() {
               height={32}
               className="object-contain object-left"
             />
-            <nav className="flex items-center gap-8">
-              <a
-                href="#about"
-                className={`text-sm uppercase tracking-wider text-white/90 transition hover:text-[#FF62FC] ${aclonica.className}`}
-              >
-                ABOUT
-              </a>
-              <a
-                href="#sponsor"
-                className={`text-sm uppercase tracking-wider text-white/90 transition hover:text-[#FF62FC] ${aclonica.className}`}
-              >
-                SPONSOR
-              </a>
+            <nav className="flex items-center gap-10 font-spot-light">
+              <a href="#about" className="text-white hover:text-[#E9A3FB] transition-colors">ABOUT</a>
+              <Image className="mb-[20px]" src="/nav.png" alt="nav" width={72} height={12} />
+              <a href="#sponsor" className="text-white hover:text-[#E9A3FB] transition-colors">SPONSOR</a>
+              <Image className="mb-[20px]" src="/nav.png" alt="nav" width={72} height={12} />
+              <a href="/login" className="text-white hover:text-[#E9A3FB] transition-colors">login</a>
               <Link
                 href="/login"
-                className={`rounded-lg border border-[#FF62FC] bg-[#FF62FC]/20 px-5 py-2.5 text-sm uppercase tracking-wider text-white transition hover:bg-[#FF62FC]/40 ${aclonica.className}`}
+                className="rounded-full bg-gradient-to-r from-[#F0CDFC] to-[#CD95E0] px-6 py-2.5 text-sm font-bold uppercase tracking-wider text-white shadow-[0_0_12px_rgba(168,85,247,0.4)] transition hover:from-[#D8B4FE] hover:to-[#C084FC] hover:shadow-[0_0_16px_rgba(168,85,247,0.5)]"
               >
                 LOGIN
               </Link>
             </nav>
           </header>
 
-          <section className="mt-16 text-center">
+          <section className="mt-16 text-center flex flex-col items-center justify-center">
             <h1
-              className={`bg-gradient-to-r from-white to-cyan-400 bg-clip-text text-4xl font-bold uppercase tracking-widest text-transparent md:text-5xl lg:text-6xl ${aclonica.className}`}
+              className={`bg-gradient-to-r from-[#FF62FC] to-[#12AAC2] bg-clip-text text-4xl font-bold uppercase tracking-widest text-transparent md:text-5xl lg:text-6xl ${aclonica.className}`}
             >
               ONE DAY OF REAL COMPETITION
             </h1>
-            <p className={`mx-auto mt-4 max-w-xl text-lg text-white/90 ${aclonica.className}`}>
-              A quick experience, real pressure, and immediate results
-            </p>
+            <div className="relative mx-auto mt-10 w-full max-w-2xl">
+              <Image
+                src="/between.png"
+                alt=""
+                width={800}
+                height={120}
+                className="w-full object-contain"
+              />
+              <p
+                className={`absolute inset-0 flex items-center justify-center px-6 text-center text-lg text-white/90 ${aclonica.className}`}
+              >
+                A quick experience, real pressure, and immediate results
+              </p>
+            </div>
+            <Image src="/footer.png" alt="about" width={1000} height={1000} />
           </section>
-
+          <Image className="fixed right-0" src="/Artwork.png" alt="about" width={600} height={700} />
           <section id="about" className="mt-24 scroll-mt-24">
             <h2
               className={`border-b-4 border-[#FF62FC] pb-2 text-3xl uppercase tracking-wider text-white ${aclonica.className}`}

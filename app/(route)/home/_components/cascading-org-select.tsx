@@ -79,7 +79,6 @@ export interface CascadingOrgSelectProps {
   onChange: (id: string | null) => void;
   placeholder?: string;
   disabled?: boolean;
-  /** Optional class for the grid container. */
   className?: string;
 }
 
