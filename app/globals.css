@@ -125,6 +125,14 @@
   animation: twinkle 3s ease-in-out infinite;
 }
 
+.ProseMirror p.is-editor-empty:first-child::before {
+  color: rgba(255, 98, 252, 0.5);
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
