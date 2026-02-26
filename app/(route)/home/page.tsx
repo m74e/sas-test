@@ -226,9 +226,9 @@ export default function Home() {
       <Image
         src="/footer.png"
         alt=""
-        width={1710}
+        width={1000}
         height={418}
-        className="pointer-events-none select-none fixed bottom-0 left-1/2 -translate-x-1/2 z-0"
+        className="pointer-events-none select-none absolute bottom-0 left-1/2 -translate-x-1/2 z-0"
       />
 
       <header className="relative z-10 flex w-full justify-between px-4 pt-4">
