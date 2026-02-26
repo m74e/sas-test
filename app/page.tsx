@@ -88,39 +88,40 @@ export default function MainPage() {
             </div>
             <Image src="/footer.png" alt="about" width={1000} height={1000} />
           </section>
-          <Image className="fixed right-0" src="/Artwork.png" alt="about" width={600} height={700} />
-          <section id="about" className="mt-24 scroll-mt-24">
-            <h2
-              className={`border-b-4 border-[#FF62FC] pb-2 text-3xl uppercase tracking-wider text-white ${aclonica.className}`}
-            >
-              ABOUT
-            </h2>
-            <p className="mt-6 max-w-3xl text-base leading-relaxed text-white/90">
-              A one-day competitive programming event aimed at first-year students
-              interested in programming from various universities, based on solving
-              programming questions within a specific time and in a way that
-              measures thinking and logic.
-            </p>
+          <div className="flex justify-between">
+            <div className="flex flex-col  justify-center"><Image src="/squer.png" alt="about" width={700} height={50} /></div>
+            <div><Image src="/Artwork.png" alt="about" width={400} height={700} /></div>
+          </div>
+          <section id="about" className="relative mt-24 scroll-mt-24">
+            <div className="about-title-wrap">
+              <span className="about-title-line" aria-hidden />
+              <h2
+                className={`text-3xl font-bold uppercase tracking-wider text-white ${aclonica.className}`}
+              >
+                ABOUT
+              </h2>
+              <span className="about-title-line" aria-hidden />
+            </div>
+            <div className="about-circuit-frame mt-6 max-w-3xl">
+              <p className="text-base leading-relaxed text-white/95 drop-shadow-[0_0_8px_rgba(255,255,255,0.15)]">
+                A one-day competitive programming event aimed at first-year students
+                interested in programming from various universities, based on solving
+                programming questions within a specific time and in a way that
+                measures thinking and logic.
+              </p>
+            </div>
+            <div className="about-band" aria-hidden />
             <p
-              className={`mt-6 text-2xl tracking-[0.4em] text-white/80 ${aclonica.className}`}
+              className={`about-chevrons text-2xl ${aclonica.className}`}
+              aria-hidden
             >
-              &lt;&lt;&lt;&lt;&lt;&lt;
+              &gt;&gt;&gt;&gt;&gt;&gt;
             </p>
-            <p className={`mt-2 text-lg uppercase tracking-widest text-white ${aclonica.className}`}>
+            <p className={`mt-4 text-lg uppercase tracking-widest text-white ${aclonica.className}`}>
               ON 2026/2/5
             </p>
           </section>
 
-          <section id="sponsor" className="mt-24 scroll-mt-24">
-            <h2
-              className={`border-b-4 border-[#FF62FC] pb-2 text-3xl uppercase tracking-wider text-white ${aclonica.className}`}
-            >
-              SPONSOR
-            </h2>
-            <p className="mt-6 max-w-3xl text-base leading-relaxed text-white/90">
-              Sponsor section — coming soon.
-            </p>
-          </section>
         </div>
       </section>
     </main>
